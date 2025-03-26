@@ -1,0 +1,6 @@
+@HIDDEN_DRUM.Api_HostAddress = http://localhost:5129
+
+GET {{HIDDEN_DRUM.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
