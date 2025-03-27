@@ -30,7 +30,7 @@ public Item(string Name, string Description, string Brand, decimal Price){
     {
         throw new ArguementException ( "Price must be greater than zero. ")
     }
-    Name= name;
+    Name = name;
     Description = description;
     Brand = brand;
     Price = price;
