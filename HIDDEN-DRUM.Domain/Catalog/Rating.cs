@@ -1,3 +1,5 @@
+using System;
+
 namespace HIDDEN_DRUM.Domain.Catalog
 {
     public class Rating 
@@ -24,3 +26,4 @@ namespace HIDDEN_DRUM.Domain.Catalog
         }
     }
 }
+

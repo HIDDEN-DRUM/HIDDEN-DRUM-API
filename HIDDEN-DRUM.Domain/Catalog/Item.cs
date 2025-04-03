@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace HIDDEN_DRUM.Domain.Catalog
 {
@@ -9,6 +10,8 @@ namespace HIDDEN_DRUM.Domain.Catalog
         public string Description { get; set; }
         public string Brand { get; set; }
         public decimal Price { get; set; }
+
+        public List<Rating> Ratings { get; set; }
 
         public Item(string name, string description, string brand, decimal price)
         {
@@ -36,8 +39,21 @@ namespace HIDDEN_DRUM.Domain.Catalog
             Description = description;
             Brand = brand;
             Price = price;
+
+            Ratings = new List<Rating>(); // initialize Ratings list
+        }
+
+        public void AddRating(Rating rating)
+        {
+            if (rating == null)
+            {
+                throw new ArgumentNullException(nameof(rating), "Rating cannot be null.");
+            }
+
+            Ratings.Add(rating);
         }
     }
 }
+
 
 
