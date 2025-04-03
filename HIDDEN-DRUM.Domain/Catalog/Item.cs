@@ -1,38 +1,43 @@
 using System;
 
-namespace HIDDEN-DRUM.Domain.Catalog
+namespace HIDDEN_DRUM.Domain.Catalog
 {
-    public classs Item
+    public class Item
     {
-        publin int Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public strin Brand { get; set; }
+        public string Brand { get; set; }
         public decimal Price { get; set; }
-        
+
+        public Item(string name, string description, string brand, decimal price)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("Name cannot be null or empty.");
+            }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                throw new ArgumentException("Description cannot be null or empty.");
+            }
+
+            if (string.IsNullOrEmpty(brand))
+            {
+                throw new ArgumentException("Brand cannot be null or empty.");
+            }
+
+            if (price < 0.00m)
+            {
+                throw new ArgumentException("Price must be greater than or equal to zero.");
+            }
+
+            Name = name;
+            Description = description;
+            Brand = brand;
+            Price = price;
+        }
     }
 }
-public Item(string Name, string Description, string Brand, decimal Price){
 
-    if ( string.isNullorEmpty(name))
-    {
-        throw new ArguementException(name);
-    }
-    if ( string.isNullorEmpty(Description))
-    {
-        throw new ArguementException(Description)
-    }
-    if ( string.isNullorEmpty(Brand))
-    {
-        throw new ArguementException(Brand)
-    }
-    if (Price < 0.00m)
-    {
-        throw new ArguementException ( "Price must be greater than zero. ")
-    }
-    Name = name;
-    Description = description;
-    Brand = brand;
-    Price = price;
 
-}
