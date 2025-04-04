@@ -1,8 +1,8 @@
 using System;
 
-namespace HIDDEN_DRUM.Domain.Catalog
+namespace HIDDEN_DRUM.Domain
 {
-    public class Rating 
+    public class Rating
     {
         public int Stars { get; set; }
         public string UserName { get; set; }
