@@ -10,7 +10,14 @@ namespace HIDDEN_DRUM.Data
         { }
 
         public DbSet<Timer> Items { get; set; }  // Use concrete class instead of interface
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            DbInitializer.Initialize(builder);
+        }
     }
 }
+
 
 
