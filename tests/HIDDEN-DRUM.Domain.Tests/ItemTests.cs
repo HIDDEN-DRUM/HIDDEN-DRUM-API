@@ -19,8 +19,21 @@ namespace HIDDEN_DRUM.Domain.Catalog
             Assert.AreEqual("Brand", item.Brand);
             Assert.AreEqual(10.00m, item.Price);
         }
+
+        [TestMethod]
+        public void Can_Create_Add_Rating()
+        {
+            var item = new Item("Name", "Description", "Brand", 10.00m);
+            var rating = new Rating(5, "Name", "Review");
+
+            item.AddRating(rating);
+
+            Assert.AreEqual(rating, item.Ratings[0]);
+        }
     }
 }
+
+
 
     
 
