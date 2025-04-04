@@ -1,8 +1,19 @@
+using HIDDEN_DRUM.Data; 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddDbContext<StoreContext>(options =>
+    options.UseSqlite("Data Source= ../Registrat.sqlite",
+    b => b.MigrationsAssembly("HIDDEN-DRUM.Api"))
+);
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
@@ -39,3 +50,4 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
