@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HIDDEN-DRUM.Domain\HIDDEN-DRUM.Domain.csproj" />
+    <ProjectReference Include="..\HIDDEN-DRUM.Data\HIDDEN-DRUM.Data.csproj" />
   </ItemGroup>
 
 </Project>
