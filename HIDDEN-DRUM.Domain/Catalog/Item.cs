@@ -2,7 +2,7 @@ using System;
 
 namespace HIDDEN-DRUM.Domain.Catalog
 {
-    public classs Item
+    public class Item
     {
         publin int Id { get; set; }
         public string Name { get; set; }
