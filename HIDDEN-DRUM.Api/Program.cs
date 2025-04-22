@@ -11,6 +11,19 @@ builder.Services.AddDbContext<StoreContext>(options =>
     b => b.MigrationsAssembly("HIDDEN-DRUM.Api"))
 );
 
+// Add CORS Support
+builder.Services.AddCors(options => 
+{
+    options.AddDefaultPolicy(builder => 
+    {
+        builder.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+        
+    });
+});
+builder.Services.AddEndpointsApiExplorer(); 
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
